@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ℝ𝕆𝕌𝕋𝔼 𝕄𝔸ℙ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url(gal2.jpg);
+            color: #ddd;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-image:url(gal2.jpg);
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 42px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+
+        }
+
+        .checkbox {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(40, 4, 124);
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ℝ𝕆𝕌𝕋𝔼 𝕄𝔸ℙ</h1>
+        <form id="messageForm">
+            <div class="checkbox-group">
+                <label>Choose places:</label>
+                <input type="checkbox" class="checkbox" name="option" value="MERCURY there we will be able oberve the mountains,craters,cliffs"> MERCURY
+                <input type="checkbox" class="checkbox" name="option" value="VENUS ther we will see cloud patters">VENUS 
+                <input type="checkbox" class="checkbox" name="option" value="MARS there we can see polar ice caps,valles marineris,Syrtis Major"> MARS
+                <input type="checkbox" class="checkbox" name="option" value="JUPITER there we can see moons"> JUPITER
+                <input type="checkbox" class="checkbox" name="option" value="SATURN there  we can see rings, cassini division,moons"> SATURN
+                <input type="checkbox" class="checkbox" name="option" value="URANUS  there we can see moons"> URANUS
+                <input type="checkbox" class="checkbox" name="option" value="NEPTUNE there we can see moons and clouds"> NEPTUNE
+            
+
+            </div>
+           
+         <button type="button" id="generateButton">GO</button>
+        <label>For more details<a href=contact.html>contact us</a> </label>
+        <a href=service.html>know more about planets</a>
+        </form>
+        <div class="message" id="messageDisplay"></div>
+    </div>
+
+    <script>
+        // JavaScript code for generating the message
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageForm = document.getElementById('messageForm');
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const generateButton = document.getElementById('generateButton');
+            const messageDisplay = document.getElementById('messageDisplay');
+
+            generateButton.addEventListener('click', function() {
+                const selectedOptions = Array.from(checkboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+
+                if (selectedOptions.length > 0) {
+                    const message = 'We will first move on to ' + selectedOptions.join('then we willmove to, ');
+                    messageDisplay.textContent = message;
+                } else {
+                    messageDisplay.textContent = 'Please select at least one option.';
+                }
+            });
+        });
+    </script>
+
+    
+
+</body>
+</html>

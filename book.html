@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝔹𝕆𝕆𝕂𝕀ℕ𝔾
+        ​​</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url(gal2.jpg);
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1d0879;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>𝔹𝕆𝕆𝕂𝕀ℕ𝔾
+        </h1>
+
+        <form id="messageForm">
+            <label for="option">Choose an option:</label>
+            <select id="option" name="option">
+        
+                <option value="FAMILY PACKAGE">FAMILY PACKAGE</option>
+                <option value="PRIVATE">PRIVATE</option>
+                <option value="GROUP">GROUP</option>
+            
+                </select>
+            <button type="button" id="generateButton">Go</button>
+        </form>
+        <div class="message" id="messageDisplay"></div>
+    </div>
+
+    <script>
+        // JavaScript code for generating the message
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageForm = document.getElementById('messageForm');
+            const optionSelect = document.getElementById('option');
+            const generateButton = document.getElementById('generateButton');
+            const messageDisplay = document.getElementById('messageDisplay');
+
+            generateButton.addEventListener('click', function() {
+                const selectedOption = optionSelect.value;
+
+                switch (selectedOption) {
+                    case 'JUPITER':
+                    window.location.href = 'jup.html';
+                
+                        break;
+                     case 'MERCURY':
+                    window.location.href = 'mer.html';
+                
+                        break;
+                    case 'VENUS':
+                    window.location.href = 'ven.html';
+                
+                        break;
+                        case 'MARS':
+                    window.location.href = 'mar.html';
+                
+                        break; 
+                    case 'SATURN':
+                    window.location.href = 'sat.html';
+                
+                        break;
+                    case 'URANUS':
+                    window.location.href = 'ura.html';
+                
+                        break; 
+                    case 'NEPTUNE':
+                    window.location.href = 'nep.html';
+                
+                        break;            
+                    default:
+                        message = 'Please choose an option.';
+                        }
+
+                messageDisplay.textContent = message;
+            });
+        });
+    </script>
+</body>
+</html>
